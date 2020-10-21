@@ -1,0 +1,8 @@
+fc:
+  client:
+    clientId: 2k1sl51j0ov2i6tuimsbdk2icv
+    clientSecret: me8sku3chvb9t9q77udnf2m578l60b8csgv3j3f4bu1vhj8e3ns
+    accessTokenUri: https://login.fitchconnect-dev.com/oauth/token
+    userAuthorizationUri: https://login.fitchconnect-dev.com/oauth/authorize
+  resource:
+    userInfoUri: http://identity-data-service:8080/v2/users
