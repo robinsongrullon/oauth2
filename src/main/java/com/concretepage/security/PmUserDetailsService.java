@@ -20,7 +20,7 @@ public class PmUserDetailsService implements UserDetailsService {
     
 	@Override
 	public UserDetails loadUserByUsername(String username)  {
-		User user = new User();
+		User user = new User("testusername", "testemail", "nopassword");
 		user.setUserEmail("mchalli@fitchgroup.co");
 		return  (UserDetails) user;
 	}

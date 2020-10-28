@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper=false, onlyExplicitlyIncluded = true)

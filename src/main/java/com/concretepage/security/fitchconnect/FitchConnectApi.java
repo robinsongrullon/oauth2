@@ -30,5 +30,9 @@ public class FitchConnectApi extends DefaultApi20 {
     public TokenExtractor<OAuth2AccessToken> getAccessTokenExtractor() {
 		return FitchConnectTokenExtractor.instance();
     }
+	
+	public String getUserInfoEndpoint() {
+		return "https://identity-data.fitchconnect-dev.com/v2/users";
+	}
 
 }

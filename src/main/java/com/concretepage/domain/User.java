@@ -3,8 +3,12 @@
 package com.concretepage.domain;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +40,8 @@ public class User implements Serializable {
 	@Getter @Setter private String  userEmailNewInputConfirm;
     private String  userEmailOld;
 	private String  userFirmName;
-	
+	@Getter @Setter 
+	private String password;
 	private byte[] userEncryptedDataKey;
 	private String userEncryptedDataContext;
 
@@ -65,11 +70,17 @@ public class User implements Serializable {
 	private Boolean userAlertSendOnEmpty;
 	private Boolean userAlertGroupEmails;
 	private Boolean userAlertSendWeeklyUsage;
-	
+	@Getter @Setter
+	private String username;
 
 	private Integer customerDownloadCredits;
 
-
+	public User(String username, String email, String password) {
+		this.username = username;
+		this.userEmail = email;
+		
+		this.password = password;
+	}
 
 	@Getter @Setter private Boolean customerIsTaxExempt;
 	
@@ -275,6 +286,13 @@ public class User implements Serializable {
 
 	public void setEmailNormalized(String s) {this.emailNormalized=s;}
 	public String getEmailNormalized() { return this.emailNormalized;}
+	private Set<Role> roles = new HashSet<>();
 
-	
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 }
